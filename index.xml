@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://srinivasreddy.dev/posts/srini/</guid>
-      <description></description>
+      <description>This is srinivas Reddy Thatiparthy. This is a test post.</description>
     </item>
     
     <item>
@@ -25,11 +25,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://srinivasreddy.dev/about/</guid>
-      <description>Hugo is a static site engine written in Go.
-It makes use of a variety of open source projects including:
- Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.
-Setup Some fun facts about Hugo:
- Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim  Have questions or suggestions?</description>
+      <description>Hi, This is Srinivas Reddy. I am a developer living in Pune,India. In this website you may find articles about Python, rust and some other stuff.
+While you are here, please take time to write a note or two. You can always contact me on thatiparthysreenivas@gmail.com.
+Thanks for visiting.</description>
     </item>
     
     <item>
