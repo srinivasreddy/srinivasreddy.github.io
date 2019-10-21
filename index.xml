@@ -20,13 +20,13 @@
     </item>
     
     <item>
-      <title>About Hugo</title>
+      <title>About Me</title>
       <link>https://srinivasreddy.dev/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://srinivasreddy.dev/about/</guid>
-      <description>Hi, This is Srinivas Reddy. I am a developer living in Pune,India. In this website you may find articles about Python, rust and some other stuff.
-While you are here, please take time to write a note or two. You can always contact me on thatiparthysreenivas@gmail.com.
+      <description>Hi, This is Srinivas Reddy. I am a Software consultant living in Pune, India. In this website you may find articles about Python, rust and some other stuff.
+If you have a consulting gig(s), You can always contact me at thatiparthysreenivas@gmail.com.
 Thanks for visiting.</description>
     </item>
     
@@ -45,7 +45,7 @@ Thanks for visiting.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://srinivasreddy.dev/projects/</guid>
-      <description>Nothing to see here&amp;hellip; Move along!</description>
+      <description>allhub - Allhub is a client to connect to Github REST API v3.</description>
     </item>
     
   </channel>
