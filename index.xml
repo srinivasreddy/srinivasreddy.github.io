@@ -25,9 +25,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://srinivasreddy.dev/about/</guid>
-      <description>Hi, This is Srinivas Reddy. I am a Software consultant living in Pune, India. In this website you may find articles about Python, rust and some other stuff.
-If you have a consulting gig(s), You can always contact me at thatiparthysreenivas@gmail.com.
-Thanks for visiting.</description>
+      <description>Hi, Welcome to my site. I am a Software consultant and open-source developer living in Pune, India. In this website you may find articles about Python, rust and some other stuff.
+The list of projects I have contributed to:
+ Django Ipython pytest CPython - (Python programming language) Rust - Programming language MongoMock - In-memory mocking library for MongoDB with minimal feature set Cargo - Rust package manager Pandas - Python data manipulation library  If you have a consulting gig(s), You can always contact me at thatiparthysreenivas@gmail.</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@ Thanks for visiting.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://srinivasreddy.dev/projects/</guid>
-      <description>allhub - Allhub is a client to connect to Github REST API v3.</description>
+      <description>allhub - Allhub is a client to connect to Github REST API v3. soduku - Sudoku solver in Python - 2010ish euler - Project Euler solutions</description>
     </item>
     
   </channel>
