@@ -57,7 +57,9 @@ I have experience with designing automation frameworks too.</description>
       <guid>https://srinivasreddy.dev/projects/</guid>
       <description>allhub - Allhub is a client to connect to Github REST API v3.
 soduku - Sudoku solver in Python - 2010ish
-euler - Project Euler solutions</description>
+euler - Project Euler solutions
+rust-bloomfilter - Bloom filter written in rust
+companies-list - Fortune 1000 companies details scraped from fortune website. Written in Typescript using puppeteer library.</description>
     </item>
     
   </channel>
