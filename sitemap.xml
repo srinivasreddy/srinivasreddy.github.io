@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://srinivasreddy.dev/posts/srini/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://srinivasreddy.dev/about/</loc>
   </url>
   
@@ -21,10 +16,6 @@
   
   <url>
     <loc>https://srinivasreddy.dev/hireme/</loc>
-  </url>
-  
-  <url>
-    <loc>https://srinivasreddy.dev/posts/</loc>
   </url>
   
   <url>
