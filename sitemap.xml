@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://srinivasreddy.dev/tags/cron/</loc>
+    <lastmod>2019-12-09T11:46:07+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/tags/crontab/</loc>
+    <lastmod>2019-12-09T11:46:07+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/posts/</loc>
+    <lastmod>2019-12-09T11:46:07+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/tags/python/</loc>
+    <lastmod>2019-12-09T11:46:07+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/</loc>
+    <lastmod>2019-12-09T11:46:07+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/tags/</loc>
+    <lastmod>2019-12-09T11:46:07+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/posts/using-python-crontab-correctly/</loc>
+    <lastmod>2019-12-09T11:46:07+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://srinivasreddy.dev/about/</loc>
   </url>
   
@@ -24,14 +59,6 @@
   
   <url>
     <loc>https://srinivasreddy.dev/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://srinivasreddy.dev/</loc>
-  </url>
-  
-  <url>
-    <loc>https://srinivasreddy.dev/tags/</loc>
   </url>
   
 </urlset>
