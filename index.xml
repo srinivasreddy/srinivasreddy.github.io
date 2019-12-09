@@ -27,7 +27,7 @@
       <guid>https://srinivasreddy.dev/about/</guid>
       <description>Hi, Welcome to my site. I am a Software consultant and open-source developer living in Pune, India. In this website you may find articles about Python, rust and some other stuff.
 The list of projects I have contributed to:
- Django Ipython pytest CPython - (Python programming language) Rust - Programming language MongoMock - In-memory mocking library for MongoDB with minimal feature set Cargo - Rust package manager Pandas - Python data manipulation library  And the projects i have created, you can find the list here</description>
+ Django Ipython pytest CPython - (Python programming language). Rust - Programming language. MongoMock - In-memory mocking library for MongoDB with minimal feature set. Cargo - Rust package manager. Pandas - Python data manipulation library.</description>
     </item>
     
     <item>
