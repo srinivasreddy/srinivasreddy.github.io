@@ -13,14 +13,12 @@
 <meta name="twitter:title" content="Using Python crontab correctly"/>
 <meta name="twitter:description" content="In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them.
 For the uninitiated, python-crontab is a python package for editing cron table aka crontab that is used for scheduling the jobs run by cron.
-I have setup a cron job which runs for every hour.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  from crontab import CronTab import os import sys if __name__ == &#34;__main__&#34;: cron = CronTab(user=os."/>
+I have setup a cron job which runs for every hour. I have a file every_hour.py that contains the following code and sets up crontable entry to run cron."/>
 
     <meta property="og:title" content="Using Python crontab correctly" />
 <meta property="og:description" content="In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them.
 For the uninitiated, python-crontab is a python package for editing cron table aka crontab that is used for scheduling the jobs run by cron.
-I have setup a cron job which runs for every hour.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  from crontab import CronTab import os import sys if __name__ == &#34;__main__&#34;: cron = CronTab(user=os." />
+I have setup a cron job which runs for every hour. I have a file every_hour.py that contains the following code and sets up crontable entry to run cron." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://srinivasreddy.dev/posts/using-python-crontab-correctly/" />
 <meta property="article:published_time" content="2019-12-09T11:46:07+05:30" />
@@ -119,7 +117,7 @@ I have setup a cron job which runs for every hour.
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              One minute read
+              2 minutes read
             </span>
           </div>
           
@@ -139,28 +137,8 @@ I have setup a cron job which runs for every hour.
 
 <p>For the uninitiated, <a href="https://gitlab.com/doctormo/python-crontab/">python-crontab</a> is a python package for editing cron table aka crontab that is used for scheduling the jobs run by cron.</p>
 
-<p>I have setup a cron job which runs for every hour.</p>
-
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">crontab</span> <span class="kn">import</span> <span class="n">CronTab</span>
+<p>I have setup a cron job which runs for every hour. I have a file <code>every_hour.py</code> that contains the following code and sets up crontable entry to run <code>cron.py</code> for every hour.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">crontab</span> <span class="kn">import</span> <span class="n">CronTab</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -174,9 +152,33 @@ I have setup a cron job which runs for every hour.
     <span class="n">comment</span> <span class="o">=</span> <span class="s2">&#34;EveryHour&#34;</span>
     <span class="n">job</span> <span class="o">=</span> <span class="n">cron</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s1">&#39;cd {} &amp;&amp; {} {} &gt; {} 2&gt;&amp;1 &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">output_file</span><span class="p">),</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">)</span>
     <span class="n">job</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">every</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">cron</span><span class="o">.</span><span class="n">write</span><span class="p">()</span></code></pre></td></tr></table>
-</div>
-</div>
+    <span class="n">cron</span><span class="o">.</span><span class="n">write</span><span class="p">()</span></code></pre></div>
+<p>The following are the key takeaways while developing the solution.</p>
+
+<ol>
+<li><p>Instead of hard coding the user argument, i get the loggedin user with <code>os.getlogin()</code></p></li>
+
+<li><p>I am writing only a single entry into cron table, so i want to make this operation idempotent.
+hence <code>cron.remove_all()</code>.</p></li>
+
+<li><p>You can also use <code>crontab -l</code> to list the cron table entries and <code>crontab -r</code> to remove
+all entries, and while <code>crontab -e</code> to edit the table entries manually. I recommend these commands
+while diagnosing, not really to edit a table entry. Because it is very easy to go wrong or introduce
+unnecessary line ending(s).</p></li>
+
+<li><p>I am assigning the executing permissions to <code>cron.py</code> with <code>os.chmod(path, 775)</code>.</p></li>
+
+<li><p>If you are in virtual environment, your site-packages may not available to virtual environ python installation if you use <code>/usr/local/bin/python</code>. So it is always better to get the virtual env python
+executable with the <code>sys.executable</code>.</p></li>
+
+<li><p><code>cd cwd</code> is perfectly fine because i want <code>cron</code> to go into that directory before executing the command.</p></li>
+
+<li><p><code>2&gt;&amp;1</code> and <code>output_file</code> helps us diagnosing the output/error logs while cron running.</p></li>
+
+<li><p><code>job.every.hour(1)</code> command runs <code>cron.py</code> file every first minute of an hour.</p></li>
+</ol>
+
+<p>Hope this helps.</p>
 
       </div>
 

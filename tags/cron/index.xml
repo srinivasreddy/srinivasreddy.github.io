@@ -19,8 +19,7 @@
       <guid>https://srinivasreddy.dev/posts/using-python-crontab-correctly/</guid>
       <description>In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them.
 For the uninitiated, python-crontab is a python package for editing cron table aka crontab that is used for scheduling the jobs run by cron.
-I have setup a cron job which runs for every hour.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  from crontab import CronTab import os import sys if __name__ == &amp;#34;__main__&amp;#34;: cron = CronTab(user=os.</description>
+I have setup a cron job which runs for every hour. I have a file every_hour.py that contains the following code and sets up crontable entry to run cron.</description>
     </item>
     
   </channel>
