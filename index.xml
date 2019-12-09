@@ -17,7 +17,10 @@
       <pubDate>Mon, 09 Dec 2019 11:46:07 +0530</pubDate>
       
       <guid>https://srinivasreddy.dev/posts/using-python-crontab-correctly/</guid>
-      <description>I have seen many posts using python-crontab with half baked information. In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them.</description>
+      <description>In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them.
+For the uninitiated, python-crontab is a python package for editing cron table aka crontab that is used for scheduling the jobs run by cron.
+I have setup a cron job which runs for every hour.
+from crontab import CronTab import os import sys if __name__ == &amp;#34;__main__&amp;#34;: cron = CronTab(user=os.</description>
     </item>
     
     <item>

@@ -11,10 +11,16 @@
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Using Python crontab correctly"/>
-<meta name="twitter:description" content="I have seen many posts using python-crontab with half baked information. In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them."/>
+<meta name="twitter:description" content="In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them.
+For the uninitiated, python-crontab is a python package for editing cron table aka crontab that is used for scheduling the jobs run by cron.
+I have setup a cron job which runs for every hour.
+from crontab import CronTab import os import sys if __name__ == &#34;__main__&#34;: cron = CronTab(user=os."/>
 
     <meta property="og:title" content="Using Python crontab correctly" />
-<meta property="og:description" content="I have seen many posts using python-crontab with half baked information. In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them." />
+<meta property="og:description" content="In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them.
+For the uninitiated, python-crontab is a python package for editing cron table aka crontab that is used for scheduling the jobs run by cron.
+I have setup a cron job which runs for every hour.
+from crontab import CronTab import os import sys if __name__ == &#34;__main__&#34;: cron = CronTab(user=os." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://srinivasreddy.dev/posts/using-python-crontab-correctly/" />
 <meta property="article:published_time" content="2019-12-09T11:46:07+05:30" />
@@ -129,10 +135,26 @@
       </header>
 
       <div>
-        <p>I have seen many posts using <code>python-crontab</code> with half baked information. In this post we are
-going to examine fully how to setup <code>python-crontab</code> correctly, and debugging for possible errors
-and how to resolve them.</p>
+        <p>In this post we are going to examine fully how to setup python-crontab correctly, and debugging for possible errors and how to resolve them.</p>
 
+<p>For the uninitiated, <a href="https://gitlab.com/doctormo/python-crontab/">python-crontab</a> is a python package for editing cron table aka crontab that is used for scheduling the jobs run by cron.</p>
+
+<p>I have setup a cron job which runs for every hour.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">from</span> crontab <span style="color:#fff;font-weight:bold">import</span> CronTab
+<span style="color:#fff;font-weight:bold">import</span> os
+<span style="color:#fff;font-weight:bold">import</span> sys
+
+<span style="color:#fff;font-weight:bold">if</span> __name__ == <span style="color:#0ff;font-weight:bold">&#34;__main__&#34;</span>:
+    cron = CronTab(user=os.getlogin())
+    cron.remove_all()
+    cwd = os.getcwd()
+    path = os.path.join(os.getcwd(), <span style="color:#0ff;font-weight:bold">&#39;cron.py&#39;</span>)
+    output_file = os.path.join(os.getcwd(), <span style="color:#0ff;font-weight:bold">&#39;crontab.output&#39;</span>)
+    os.chmod(path, <span style="color:#ff0;font-weight:bold">775</span>)
+    comment = <span style="color:#0ff;font-weight:bold">&#34;EveryHour&#34;</span>
+    job = cron.new(command=<span style="color:#0ff;font-weight:bold">&#39;cd {} &amp;&amp; {} {} &gt; {} 2&gt;&amp;1 &#39;</span>.format(cwd, sys.executable, path, output_file), comment=comment)
+    job.hour.every(<span style="color:#ff0;font-weight:bold">1</span>)
+    cron.write()</code></pre></div>
       </div>
 
       <footer>
