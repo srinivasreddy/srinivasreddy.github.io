@@ -176,6 +176,10 @@ executable with the <code>sys.executable</code>.</p></li>
 <li><p><code>2&gt;&amp;1</code> and <code>output_file</code> help us diagnosing the output/error logs while cron running.</p></li>
 
 <li><p>The command <code>job.every.hour(1)</code>  runs <code>cron.py</code> file every first minute of an hour.</p></li>
+
+<li><p>While it is unrealistic to wait for an hour to check for cron, so change <code>job.every.hour(1)</code> to <code>job.every.minute(1)</code> for debugging.</p></li>
+
+<li><p>And run <code>stat output_file</code> to see updated timestamps.</p></li>
 </ol>
 
 <p>I hope this helps.</p>
