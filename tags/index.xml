@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Srini&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Dec 2019 11:46:07 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 13 Dec 2019 16:28:15 +0530</lastBuildDate>
     
 	<atom:link href="https://srinivasreddy.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>brilliant</title>
+      <link>https://srinivasreddy.dev/tags/brilliant/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/brilliant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://srinivasreddy.dev/tags/kubernetes/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://srinivasreddy.dev/tags/machine-learning/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>podcasts</title>
+      <link>https://srinivasreddy.dev/tags/podcasts/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/podcasts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>cron</title>

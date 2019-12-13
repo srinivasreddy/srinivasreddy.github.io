@@ -6,10 +6,26 @@
     <description>Recent content on Srini&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Dec 2019 11:46:07 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 13 Dec 2019 16:28:15 +0530</lastBuildDate>
     
 	<atom:link href="https://srinivasreddy.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The best podcasts I listened</title>
+      <link>https://srinivasreddy.dev/posts/best-podcasts-i-listened/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/posts/best-podcasts-i-listened/</guid>
+      <description>This post is an archive of the podcasts I have liked for the sheer brilliance of the interviewee.
+This post will be updated as I listen more.
+Note: The order of appearance does not indicate any preference.
+ Machine Learning Joins with Arun Kumar
+ Cruise: Self-Driving Engineering with Mo Elshenawy
+ Kubernetes Vision with Joe Beda
+ Envoy, with Matt Klein
+ Future of Computing with John Hennessy Holiday Repeat</description>
+    </item>
     
     <item>
       <title>Using Python crontab correctly</title>
