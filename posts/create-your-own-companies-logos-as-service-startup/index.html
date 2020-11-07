@@ -11,11 +11,11 @@
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Build companies logos as a service startup. While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting an 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.
+<meta name="twitter:description" content="Build companies logos as a service startup. While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.
 You can install the required packages with the following command,"/>
 
     <meta property="og:title" content="" />
-<meta property="og:description" content="Build companies logos as a service startup. While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting an 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.
+<meta property="og:description" content="Build companies logos as a service startup. While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.
 You can install the required packages with the following command," />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/" />
@@ -114,7 +114,7 @@ You can install the required packages with the following command," />
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2 minutes read
+              3 minutes read
             </span>
           </div>
           
@@ -124,7 +124,7 @@ You can install the required packages with the following command," />
 
       <div>
         <h2 id="build-companies-logos-as-a-service-startup">Build companies logos as a service startup.</h2>
-<p>While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting an 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.</p>
+<p>While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.</p>
 <p>You can install the required packages with the following command,</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm i puppeteer puppeteer-extra-plugin-stealth reflect-metadata node-fetch fs puppeteer-extra --save
 </code></pre></div><p>Then,</p>
@@ -152,7 +152,9 @@ You can install the required packages with the following command," />
         <span class="kr">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="p">[];</span>
         <span class="kr">const</span> <span class="nx">urls</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">((</span><span class="nx">resultsObject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
             <span class="kr">const</span> <span class="nx">urlResults</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">resultsObject</span><span class="p">).</span><span class="nx">results</span><span class="p">;</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;search&#34;</span><span class="p">).</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;a[href^=&#34;https://www.facebook.com&#34;&#39;</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">a</span>: <span class="kt">HTMLAnchorElement</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;search&#34;</span><span class="p">).</span>
+            <span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;a[href^=&#34;https://www.facebook.com&#34;&#39;</span><span class="p">).</span>
+            <span class="nx">forEach</span><span class="p">((</span><span class="nx">a</span>: <span class="kt">HTMLAnchorElement</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
                 <span class="nx">urlResults</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">href</span><span class="p">);</span>
             <span class="p">});</span>
             <span class="k">return</span> <span class="nx">urlResults</span><span class="p">;</span>
@@ -191,7 +193,7 @@ You can install the required packages with the following command," />
 
 </code></pre></div><h1 id="todo">TODO</h1>
 <ol>
-<li>You can generally store them in S3 bucket and store the path in the database or store them in DB as a blob. There are various pros and cons associated with each approach. Every few years this discussion comes up in DB mailing lists as <code>To blob or Not to blob</code> . You can google that expression. :)</li>
+<li>You can generally store an image in an S3 bucket and store the path in the database or store it in DB as a blob. There are various pros and cons associated with each approach. Every few years this discussion comes up in DB mailing lists as <code>To blob or Not to blob</code> . You can google that expression. :)</li>
 </ol>
 <h1 id="key-take-aways-from-the-script">Key take aways from the script.</h1>
 <ol>
