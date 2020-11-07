@@ -37,5 +37,15 @@ For the uninitiated, python-crontab is a python package for editing cron table a
 I have setup a cron job which runs for every hour. I have a file every_hour.py that contains the following code and sets up crontable entry to run cron.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/</guid>
+      <description>Build companies logos as a service startup. While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting an 100 odd companies logos, I have to warn you that I haven&amp;rsquo;t tested more than that.
+You can install the required packages with the following command,</description>
+    </item>
+    
   </channel>
 </rss>
