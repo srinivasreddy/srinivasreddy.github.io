@@ -57,7 +57,7 @@ I have setup a cron job which runs for every hour. I have a file every_hour.py t
     <link rel="icon" type="image/png" href="https://srinivasreddy.dev/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://srinivasreddy.dev/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="generator" content="Hugo 0.73.0" />
   </head>
 
   <body class=" ">
@@ -134,9 +134,7 @@ I have setup a cron job which runs for every hour. I have a file every_hour.py t
 
       <div>
         <p>In this post, we are going to examine thoroughly how to setup python-crontab correctly and debugging for possible errors and how to resolve them.</p>
-
 <p>For the uninitiated, <a href="https://gitlab.com/doctormo/python-crontab/">python-crontab</a> is a python package for editing cron table aka crontab used for scheduling the jobs run by cron.</p>
-
 <p>I have setup a cron job which runs for every hour. I have a file <code>every_hour.py</code> that contains the following code and sets up crontable entry to run <code>cron.py</code> for every hour.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">crontab</span> <span class="kn">import</span> <span class="n">CronTab</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -152,36 +150,45 @@ I have setup a cron job which runs for every hour. I have a file every_hour.py t
     <span class="n">comment</span> <span class="o">=</span> <span class="s2">&#34;EveryHour&#34;</span>
     <span class="n">job</span> <span class="o">=</span> <span class="n">cron</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="s1">&#39;cd {} &amp;&amp; {} {} &gt; {} 2&gt;&amp;1 &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cwd</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">output_file</span><span class="p">),</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">)</span>
     <span class="n">job</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">every</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">cron</span><span class="o">.</span><span class="n">write</span><span class="p">()</span></code></pre></div>
-<p>The following are the key takeaways while developing the solution.</p>
-
+    <span class="n">cron</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+</code></pre></div><p>The following are the key takeaways while developing the solution.</p>
 <ol>
-<li><p>Instead of hard coding the user argument, I get the logged-in user with <code>os.getlogin()</code></p></li>
-
-<li><p>I am writing only a single entry into cron table, so I want to make this operation idempotent.
-hence <code>cron.remove_all()</code>.</p></li>
-
-<li><p>You can also use <code>crontab -l</code> to list the cron table entries and <code>crontab -r</code> to remove
+<li>
+<p>Instead of hard coding the user argument, I get the logged-in user with <code>os.getlogin()</code></p>
+</li>
+<li>
+<p>I am writing only a single entry into cron table, so I want to make this operation idempotent.
+hence <code>cron.remove_all()</code>.</p>
+</li>
+<li>
+<p>You can also use <code>crontab -l</code> to list the cron table entries and <code>crontab -r</code> to remove
 all entries, and while <code>crontab -e</code> to edit the table entries manually. I recommend these commands
 while diagnosing not to update a table entry. Because it is very easy to go wrong or introduce
-unnecessary line ending(s).</p></li>
-
-<li><p>I am assigning the executing permissions to <code>cron.py</code> with <code>os.chmod(path, 775)</code>.</p></li>
-
-<li><p>If you are in a virtual environment, your site-packages may not available to virtual environ python installation if you use <code>/usr/local/bin/python.</code> So it is always better to get the virtual env python
-executable with the <code>sys.executable</code>.</p></li>
-
-<li><p><code>cd cwd</code> is perfectly fine because I want <code>cron</code> to go into that directory before executing the command.</p></li>
-
-<li><p><code>2&gt;&amp;1</code> and <code>output_file</code> help us diagnosing the output/error logs while cron running.</p></li>
-
-<li><p>The command <code>job.every.hour(1)</code>  runs <code>cron.py</code> file every first minute of an hour.</p></li>
-
-<li><p>While it is unrealistic to wait for an hour to check for cron, so change <code>job.every.hour(1)</code> to <code>job.every.minute(1)</code> for debugging.</p></li>
-
-<li><p>And run <code>stat output_file</code> to see updated timestamps.</p></li>
+unnecessary line ending(s).</p>
+</li>
+<li>
+<p>I am assigning the executing permissions to <code>cron.py</code> with <code>os.chmod(path, 775)</code>.</p>
+</li>
+<li>
+<p>If you are in a virtual environment, your site-packages may not available to virtual environ python installation if you use <code>/usr/local/bin/python.</code> So it is always better to get the virtual env python
+executable with the <code>sys.executable</code>.</p>
+</li>
+<li>
+<p><code>cd cwd</code> is perfectly fine because I want <code>cron</code> to go into that directory before executing the command.</p>
+</li>
+<li>
+<p><code>2&gt;&amp;1</code> and <code>output_file</code> help us diagnosing the output/error logs while cron running.</p>
+</li>
+<li>
+<p>The command <code>job.every.hour(1)</code>  runs <code>cron.py</code> file every first minute of an hour.</p>
+</li>
+<li>
+<p>While it is unrealistic to wait for an hour to check for cron, so change <code>job.every.hour(1)</code> to <code>job.every.minute(1)</code> for debugging.</p>
+</li>
+<li>
+<p>And run <code>stat output_file</code> to see updated timestamps.</p>
+</li>
 </ol>
-
 <p>I hope this helps.</p>
 
       </div>
@@ -206,7 +213,7 @@ executable with the <code>sys.executable</code>.</p></li>
     
       <p>All the content here is licensed under creative commons.</p>
     
-     © 2019
+     © 2020
     
        · 
       Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
