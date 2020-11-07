@@ -126,12 +126,9 @@ You can install the required packages with the following command," />
         <h2 id="build-companies-logos-as-a-service-startup">Build companies logos as a service startup.</h2>
 <p>While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.</p>
 <p>You can install the required packages with the following command,</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">
-<span class="sb">`</span>npm i puppeteer puppeteer-extra-plugin-stealth reflect-metadata node-fetch fs puppeteer-extra --save<span class="sb">`</span>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">npm i puppeteer puppeteer-extra-plugin-stealth reflect-metadata node-fetch fs puppeteer-extra --save
 </code></pre></div><p>Then,</p>
-<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript">
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Browser</span><span class="p">,</span> <span class="nx">BrowserContext</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;puppeteer&#34;</span><span class="p">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Browser</span><span class="p">,</span> <span class="nx">BrowserContext</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;puppeteer&#34;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">puppeteer</span><span class="p">,</span> <span class="p">{</span> <span class="nx">PuppeteerExtra</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;puppeteer-extra&#34;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">StealthPlugin</span> <span class="kr">from</span> <span class="s2">&#34;puppeteer-extra-plugin-stealth&#34;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">fetch</span> <span class="kr">from</span> <span class="s2">&#34;node-fetch&#34;</span><span class="p">;</span>
@@ -187,13 +184,11 @@ You can install the required packages with the following command," />
 <span class="p">}</span>
 </code></pre></div><p>In file <code>logodownloader.ts</code>, you can invoke this script as,</p>
 <div class="highlight"><pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="kr">import</span> <span class="s2">&#34;reflect-metadata&#34;</span><span class="p">;</span>
-
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">startLogoDownloader</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;../common/logo_downloader&#34;</span><span class="p">;</span>
 
 <span class="p">(</span><span class="kr">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">await</span> <span class="nx">startLogoDownloader</span><span class="p">();</span>
 <span class="p">})();</span>
-
 </code></pre></div><h3 id="todo">TODO</h3>
 <ol>
 <li>You can generally store an image in an S3 bucket and store the path in the database or store it in DB as a blob. There are various pros and cons associated with each approach. Every few years this discussion comes up in DB mailing lists as <code>To blob or Not to blob</code> . You can google that expression. :)</li>
