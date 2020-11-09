@@ -158,67 +158,67 @@ npm i puppeteer puppeteer-extra-plugin-stealth --save npm i reflect-metadata nod
         
         <p>While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.</p>
 <p>You can install the required packages with the following commands,</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i puppeteer puppeteer-extra-plugin-stealth --save
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i puppeteer puppeteer-extra-plugin-stealth --save
 npm i reflect-metadata node-fetch fs puppeteer-extra --save
 </code></pre></div><p>Then,</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#fff;font-weight:bold">import</span> { Browser, BrowserContext } <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;puppeteer&#34;</span>;
-<span style="color:#fff;font-weight:bold">import</span> puppeteer, { PuppeteerExtra } <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;puppeteer-extra&#34;</span>;
-<span style="color:#fff;font-weight:bold">import</span> StealthPlugin <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;puppeteer-extra-plugin-stealth&#34;</span>;
-<span style="color:#fff;font-weight:bold">import</span> fetch <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;node-fetch&#34;</span>;
-<span style="color:#fff;font-weight:bold">import</span> fs <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;fs&#34;</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#00f">import</span> { Browser, BrowserContext } <span style="color:#00f">from</span> <span style="color:#a31515">&#34;puppeteer&#34;</span>;
+<span style="color:#00f">import</span> puppeteer, { PuppeteerExtra } <span style="color:#00f">from</span> <span style="color:#a31515">&#34;puppeteer-extra&#34;</span>;
+<span style="color:#00f">import</span> StealthPlugin <span style="color:#00f">from</span> <span style="color:#a31515">&#34;puppeteer-extra-plugin-stealth&#34;</span>;
+<span style="color:#00f">import</span> fetch <span style="color:#00f">from</span> <span style="color:#a31515">&#34;node-fetch&#34;</span>;
+<span style="color:#00f">import</span> fs <span style="color:#00f">from</span> <span style="color:#a31515">&#34;fs&#34;</span>;
     
-<span style="color:#fff;font-weight:bold">async</span> <span style="color:#fff;font-weight:bold">function</span> startLogoDownloader() {
-    <span style="color:#fff;font-weight:bold">const</span> companyName = <span style="color:#0ff;font-weight:bold">&#34;Google&#34;</span>;
+<span style="color:#00f">async</span> <span style="color:#00f">function</span> startLogoDownloader() {
+    <span style="color:#00f">const</span> companyName = <span style="color:#a31515">&#34;Google&#34;</span>;
     puppeteer.use(StealthPlugin());
-    <span style="color:#fff;font-weight:bold">const</span> browser = <span style="color:#fff;font-weight:bold">await</span> puppeteer.launch({ headless: <span style="color:#fff;font-weight:bold">false</span> });
-    <span style="color:#fff;font-weight:bold">const</span> browserContext = <span style="color:#fff;font-weight:bold">await</span> browser.createIncognitoBrowserContext();
-    <span style="color:#fff;font-weight:bold">const</span> page = <span style="color:#fff;font-weight:bold">await</span> browserContext.newPage();
-    <span style="color:#fff;font-weight:bold">const</span> jobUrl = <span style="color:#0ff;font-weight:bold">&#34;https://google.com&#34;</span>;
-    <span style="color:#fff;font-weight:bold">try</span> {
-        <span style="color:#fff;font-weight:bold">await</span> page.<span style="color:#fff;font-weight:bold">goto</span>(jobUrl, { waitUntil: <span style="color:#0ff;font-weight:bold">&#34;networkidle2&#34;</span> });
-        <span style="color:#fff;font-weight:bold">await</span> page.<span style="color:#fff;font-weight:bold">type</span>(<span style="color:#0ff;font-weight:bold">&#34;input[type=text]&#34;</span>, <span style="color:#0ff;font-weight:bold">`facebook page of </span><span style="color:#0ff;font-weight:bold">${</span>companyName<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> company`</span>, { delay: <span style="color:#fff;font-weight:bold">40</span> });
-        <span style="color:#fff;font-weight:bold">await</span> page.keyboard.press(<span style="color:#0ff;font-weight:bold">&#34;Enter&#34;</span>);
-        <span style="color:#fff;font-weight:bold">await</span> page.waitForSelector(<span style="color:#0ff;font-weight:bold">&#34;div#search&#34;</span>, { timeout: <span style="color:#fff;font-weight:bold">10000</span> });
-        <span style="color:#fff;font-weight:bold">await</span> page.waitForSelector(<span style="color:#0ff;font-weight:bold">&#39;a[href^=&#34;https://www.facebook.com&#34;&#39;</span>, { timeout: <span style="color:#fff;font-weight:bold">10000</span> });
-        <span style="color:#fff;font-weight:bold">const</span> results = [];
-        <span style="color:#fff;font-weight:bold">const</span> urls = <span style="color:#fff;font-weight:bold">await</span> page.evaluate((resultsObject) =&gt; {
-            <span style="color:#fff;font-weight:bold">const</span> urlResults = JSON.parse(resultsObject).results;
-            <span style="color:#fff;font-weight:bold">document</span>.getElementById(<span style="color:#0ff;font-weight:bold">&#34;search&#34;</span>).
-            querySelectorAll(<span style="color:#0ff;font-weight:bold">&#39;a[href^=&#34;https://www.facebook.com&#34;&#39;</span>).
-            forEach((a: <span style="color:#fff;font-weight:bold">HTMLAnchorElement</span>) =&gt; {
+    <span style="color:#00f">const</span> browser = <span style="color:#00f">await</span> puppeteer.launch({ headless: <span style="color:#2b91af">false</span> });
+    <span style="color:#00f">const</span> browserContext = <span style="color:#00f">await</span> browser.createIncognitoBrowserContext();
+    <span style="color:#00f">const</span> page = <span style="color:#00f">await</span> browserContext.newPage();
+    <span style="color:#00f">const</span> jobUrl = <span style="color:#a31515">&#34;https://google.com&#34;</span>;
+    <span style="color:#00f">try</span> {
+        <span style="color:#00f">await</span> page.<span style="color:#00f">goto</span>(jobUrl, { waitUntil: <span style="color:#a31515">&#34;networkidle2&#34;</span> });
+        <span style="color:#00f">await</span> page.<span style="color:#00f">type</span>(<span style="color:#a31515">&#34;input[type=text]&#34;</span>, <span style="color:#a31515">`facebook page of </span><span style="color:#a31515">${</span>companyName<span style="color:#a31515">}</span><span style="color:#a31515"> company`</span>, { delay: <span style="color:#2b91af">40</span> });
+        <span style="color:#00f">await</span> page.keyboard.press(<span style="color:#a31515">&#34;Enter&#34;</span>);
+        <span style="color:#00f">await</span> page.waitForSelector(<span style="color:#a31515">&#34;div#search&#34;</span>, { timeout: <span style="color:#2b91af">10000</span> });
+        <span style="color:#00f">await</span> page.waitForSelector(<span style="color:#a31515">&#39;a[href^=&#34;https://www.facebook.com&#34;&#39;</span>, { timeout: <span style="color:#2b91af">10000</span> });
+        <span style="color:#00f">const</span> results = [];
+        <span style="color:#00f">const</span> urls = <span style="color:#00f">await</span> page.evaluate((resultsObject) =&gt; {
+            <span style="color:#00f">const</span> urlResults = JSON.parse(resultsObject).results;
+            document.getElementById(<span style="color:#a31515">&#34;search&#34;</span>).
+            querySelectorAll(<span style="color:#a31515">&#39;a[href^=&#34;https://www.facebook.com&#34;&#39;</span>).
+            forEach((a: <span style="color:#2b91af">HTMLAnchorElement</span>) =&gt; {
                 urlResults.push(a.href);
             });
-            <span style="color:#fff;font-weight:bold">return</span> urlResults;
+            <span style="color:#00f">return</span> urlResults;
         }, JSON.stringify({ results }));
 
-        <span style="color:#fff;font-weight:bold">if</span> (urls.length === <span style="color:#ff0;font-weight:bold">0</span>) {
-            <span style="color:#fff;font-weight:bold">return</span>;
+        <span style="color:#00f">if</span> (urls.length === 0) {
+            <span style="color:#00f">return</span>;
         }
-        <span style="color:#007f7f">// Take the first result
-</span><span style="color:#007f7f"></span>        <span style="color:#fff;font-weight:bold">await</span> page.<span style="color:#fff;font-weight:bold">goto</span>(urls[<span style="color:#ff0;font-weight:bold">0</span>], { waitUntil: <span style="color:#0ff;font-weight:bold">&#34;networkidle2&#34;</span> });
-        <span style="color:#fff;font-weight:bold">await</span> page.waitForSelector(<span style="color:#0ff;font-weight:bold">&#39;a[aria-label=&#34;Profile picture&#34;]&#39;</span>, { timeout: <span style="color:#fff;font-weight:bold">10000</span> });
-        <span style="color:#fff;font-weight:bold">const</span> imageUrl = <span style="color:#fff;font-weight:bold">await</span> page.evaluate(() =&gt; {
-            <span style="color:#fff;font-weight:bold">const</span> element = <span style="color:#fff;font-weight:bold">document</span>.querySelector(<span style="color:#0ff;font-weight:bold">&#39;a[aria-label=&#34;Profile picture&#34;]&#39;</span>).querySelector(<span style="color:#0ff;font-weight:bold">&#34;img&#34;</span>);
-            <span style="color:#fff;font-weight:bold">return</span> element.src;
+        <span style="color:#008000">// Take the first result
+</span><span style="color:#008000"></span>        <span style="color:#00f">await</span> page.<span style="color:#00f">goto</span>(urls[0], { waitUntil: <span style="color:#a31515">&#34;networkidle2&#34;</span> });
+        <span style="color:#00f">await</span> page.waitForSelector(<span style="color:#a31515">&#39;a[aria-label=&#34;Profile picture&#34;]&#39;</span>, { timeout: <span style="color:#2b91af">10000</span> });
+        <span style="color:#00f">const</span> imageUrl = <span style="color:#00f">await</span> page.evaluate(() =&gt; {
+            <span style="color:#00f">const</span> element = document.querySelector(<span style="color:#a31515">&#39;a[aria-label=&#34;Profile picture&#34;]&#39;</span>).querySelector(<span style="color:#a31515">&#34;img&#34;</span>);
+            <span style="color:#00f">return</span> element.src;
         });
-        console.log(<span style="color:#0ff;font-weight:bold">`The image url is </span><span style="color:#0ff;font-weight:bold">${</span>imageUrl<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">`</span>);
-        <span style="color:#fff;font-weight:bold">const</span> resp = <span style="color:#fff;font-weight:bold">await</span> fetch(imageUrl);
-        <span style="color:#fff;font-weight:bold">const</span> buffer = <span style="color:#fff;font-weight:bold">await</span> resp.buffer();
-        <span style="color:#fff;font-weight:bold">const</span> path = <span style="color:#0ff;font-weight:bold">`./</span><span style="color:#0ff;font-weight:bold">${</span>companyName<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">.png`</span>;
+        console.log(<span style="color:#a31515">`The image url is </span><span style="color:#a31515">${</span>imageUrl<span style="color:#a31515">}</span><span style="color:#a31515">`</span>);
+        <span style="color:#00f">const</span> resp = <span style="color:#00f">await</span> fetch(imageUrl);
+        <span style="color:#00f">const</span> buffer = <span style="color:#00f">await</span> resp.buffer();
+        <span style="color:#00f">const</span> path = <span style="color:#a31515">`./</span><span style="color:#a31515">${</span>companyName<span style="color:#a31515">}</span><span style="color:#a31515">.png`</span>;
         fs.createWriteStream(path).write(buffer);
-        <span style="color:#fff;font-weight:bold">await</span> page.close();
-        <span style="color:#fff;font-weight:bold">await</span> browserContext.close();
-        <span style="color:#fff;font-weight:bold">await</span> browser.close();
-} <span style="color:#fff;font-weight:bold">catch</span> (e) {
-        console.log(<span style="color:#0ff;font-weight:bold">`Error(s) occured for </span><span style="color:#0ff;font-weight:bold">${</span>companyName<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> : </span><span style="color:#0ff;font-weight:bold">${</span>e.toString()<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">`</span>);
+        <span style="color:#00f">await</span> page.close();
+        <span style="color:#00f">await</span> browserContext.close();
+        <span style="color:#00f">await</span> browser.close();
+} <span style="color:#00f">catch</span> (e) {
+        console.log(<span style="color:#a31515">`Error(s) occured for </span><span style="color:#a31515">${</span>companyName<span style="color:#a31515">}</span><span style="color:#a31515"> : </span><span style="color:#a31515">${</span>e.toString()<span style="color:#a31515">}</span><span style="color:#a31515">`</span>);
     }
 }
 </code></pre></div><p>In file <code>logodownloader.ts</code>, you can invoke this script as,</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#fff;font-weight:bold">import</span> <span style="color:#0ff;font-weight:bold">&#34;reflect-metadata&#34;</span>;
-<span style="color:#fff;font-weight:bold">import</span> { startLogoDownloader } <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;../common/logo_downloader&#34;</span>;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#00f">import</span> <span style="color:#a31515">&#34;reflect-metadata&#34;</span>;
+<span style="color:#00f">import</span> { startLogoDownloader } <span style="color:#00f">from</span> <span style="color:#a31515">&#34;../common/logo_downloader&#34;</span>;
 
-(<span style="color:#fff;font-weight:bold">async</span> () =&gt; {
-    <span style="color:#fff;font-weight:bold">await</span> startLogoDownloader();
+(<span style="color:#00f">async</span> () =&gt; {
+    <span style="color:#00f">await</span> startLogoDownloader();
 })();
 </code></pre></div><h3 id="todo">TODO</h3>
 <ol>
