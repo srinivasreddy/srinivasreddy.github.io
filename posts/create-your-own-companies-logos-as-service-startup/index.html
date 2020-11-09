@@ -169,8 +169,6 @@ npm i reflect-metadata node-fetch fs puppeteer-extra --save
     
 <span style="color:#fff;font-weight:bold">async</span> <span style="color:#fff;font-weight:bold">function</span> startLogoDownloader() {
     <span style="color:#fff;font-weight:bold">const</span> companyName = <span style="color:#0ff;font-weight:bold">&#34;Google&#34;</span>;
-    <span style="color:#fff;font-weight:bold">const</span> jobs: <span style="color:#fff;font-weight:bold">Job</span>[] = [];
-    <span style="color:#fff;font-weight:bold">const</span> inactiveUrls: <span style="color:#fff;font-weight:bold">string</span>[] = [];
     puppeteer.use(StealthPlugin());
     <span style="color:#fff;font-weight:bold">const</span> browser = <span style="color:#fff;font-weight:bold">await</span> puppeteer.launch({ headless: <span style="color:#fff;font-weight:bold">false</span> });
     <span style="color:#fff;font-weight:bold">const</span> browserContext = <span style="color:#fff;font-weight:bold">await</span> browser.createIncognitoBrowserContext();
@@ -224,7 +222,7 @@ npm i reflect-metadata node-fetch fs puppeteer-extra --save
 })();
 </code></pre></div><h3 id="todo">TODO</h3>
 <ol>
-<li>You can generally store an image in an S3 bucket and store the path in the database or store it in DB as a blob. There are various pros and cons associated with each approach. Every few years this discussion comes up in DB mailing lists as <code>To blob or Not to blob</code> . You can google that expression. :)</li>
+<li>You can generally store an image in an S3 bucket and store the path in the database or store it in DB as a blob. There are various pros and cons associated with each approach. Every few years this discussion comes up in DB mailing lists as <code>To blob or Not to blob</code>. You can google that expression. :)</li>
 </ol>
 <h3 id="key-take-aways-from-the-script">Key take aways from the script.</h3>
 <ol>
