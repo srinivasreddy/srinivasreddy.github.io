@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>idea on Srini&#39;s blog</title>
+    <link>https://srinivasreddy.dev/tags/idea/</link>
+    <description>Recent content in idea on Srini&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 Nov 2020 17:07:56 +0530</lastBuildDate><atom:link href="https://srinivasreddy.dev/tags/idea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build companies logos as a service startup</title>
+      <link>https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/</link>
+      <pubDate>Sat, 07 Nov 2020 17:07:56 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/</guid>
+      <description>While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&amp;rsquo;t tested more than that.
+You can install the required packages with the following commands,
+npm i puppeteer puppeteer-extra-plugin-stealth --save npm i reflect-metadata node-fetch fs puppeteer-extra --save Then,</description>
+    </item>
+    
+  </channel>
+</rss>

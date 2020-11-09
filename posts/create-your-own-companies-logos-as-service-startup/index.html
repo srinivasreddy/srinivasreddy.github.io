@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Srinivas Reddy Thatiparthy">
+    <meta name="description" content="While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.
+You can install the required packages with the following commands,
+npm i puppeteer puppeteer-extra-plugin-stealth --save npm i reflect-metadata node-fetch fs puppeteer-extra --save Then,">
+    <meta name="keywords" content="Blogger, Developer, Wannabe enterprenuer">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Build companies logos as a service startup"/>
+<meta name="twitter:description" content="While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.
+You can install the required packages with the following commands,
+npm i puppeteer puppeteer-extra-plugin-stealth --save npm i reflect-metadata node-fetch fs puppeteer-extra --save Then,"/>
+
+    <meta property="og:title" content="Build companies logos as a service startup" />
+<meta property="og:description" content="While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.
+You can install the required packages with the following commands,
+npm i puppeteer puppeteer-extra-plugin-stealth --save npm i reflect-metadata node-fetch fs puppeteer-extra --save Then," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/" />
+<meta property="article:published_time" content="2020-11-07T17:07:56+05:30" />
+<meta property="article:modified_time" content="2020-11-07T17:07:56+05:30" />
+
+
+    <title>
+  Build companies logos as a service startup · Srini&#39;s blog
+</title>
+
+    
+      <link rel="canonical" href="https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://srinivasreddy.dev/css/coder.min.f01c647a0d25b40da992a37c3376291185eed8a50ced8c26cc2c0bcfe38c97df.css" integrity="sha256-8Bxkeg0ltA2pkqN8M3YpEYXu2KUM7YwmzCwLz&#43;OMl98=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://srinivasreddy.dev/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://srinivasreddy.dev/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://srinivasreddy.dev/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://srinivasreddy.dev/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.78.1" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://srinivasreddy.dev/">
+      Srini&#39;s blog
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/contact/">Contact me</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/hireme/">Hire me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Build companies logos as a service startup</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2020-11-07T17:07:56&#43;05:30'>
+                November 7, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <a href="https://srinivasreddy.dev/tags/startups/">startups</a>
+      <span class="separator">•</span>
+    <a href="https://srinivasreddy.dev/tags/idea/">idea</a>
+      <span class="separator">•</span>
+    <a href="https://srinivasreddy.dev/tags/sass/">sass</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&rsquo;t tested more than that.</p>
+<p>You can install the required packages with the following commands,</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm i puppeteer puppeteer-extra-plugin-stealth --save
+npm i reflect-metadata node-fetch fs puppeteer-extra --save
+</code></pre></div><p>Then,</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#fff;font-weight:bold">import</span> { Browser, BrowserContext } <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;puppeteer&#34;</span>;
+<span style="color:#fff;font-weight:bold">import</span> puppeteer, { PuppeteerExtra } <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;puppeteer-extra&#34;</span>;
+<span style="color:#fff;font-weight:bold">import</span> StealthPlugin <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;puppeteer-extra-plugin-stealth&#34;</span>;
+<span style="color:#fff;font-weight:bold">import</span> fetch <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;node-fetch&#34;</span>;
+<span style="color:#fff;font-weight:bold">import</span> fs <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;fs&#34;</span>;
+    
+<span style="color:#fff;font-weight:bold">async</span> <span style="color:#fff;font-weight:bold">function</span> startLogoDownloader() {
+    <span style="color:#fff;font-weight:bold">const</span> companyName = <span style="color:#0ff;font-weight:bold">&#34;Google&#34;</span>;
+    <span style="color:#fff;font-weight:bold">const</span> jobs: <span style="color:#fff;font-weight:bold">Job</span>[] = [];
+    <span style="color:#fff;font-weight:bold">const</span> inactiveUrls: <span style="color:#fff;font-weight:bold">string</span>[] = [];
+    puppeteer.use(StealthPlugin());
+    <span style="color:#fff;font-weight:bold">const</span> browser = <span style="color:#fff;font-weight:bold">await</span> puppeteer.launch({ headless: <span style="color:#fff;font-weight:bold">false</span> });
+    <span style="color:#fff;font-weight:bold">const</span> browserContext = <span style="color:#fff;font-weight:bold">await</span> browser.createIncognitoBrowserContext();
+    <span style="color:#fff;font-weight:bold">const</span> page = <span style="color:#fff;font-weight:bold">await</span> browserContext.newPage();
+    <span style="color:#fff;font-weight:bold">const</span> jobUrl = <span style="color:#0ff;font-weight:bold">&#34;https://google.com&#34;</span>;
+    <span style="color:#fff;font-weight:bold">try</span> {
+        <span style="color:#fff;font-weight:bold">await</span> page.<span style="color:#fff;font-weight:bold">goto</span>(jobUrl, { waitUntil: <span style="color:#0ff;font-weight:bold">&#34;networkidle2&#34;</span> });
+        <span style="color:#fff;font-weight:bold">await</span> page.<span style="color:#fff;font-weight:bold">type</span>(<span style="color:#0ff;font-weight:bold">&#34;input[type=text]&#34;</span>, <span style="color:#0ff;font-weight:bold">`facebook page of </span><span style="color:#0ff;font-weight:bold">${</span>companyName<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> company`</span>, { delay: <span style="color:#fff;font-weight:bold">40</span> });
+        <span style="color:#fff;font-weight:bold">await</span> page.keyboard.press(<span style="color:#0ff;font-weight:bold">&#34;Enter&#34;</span>);
+        <span style="color:#fff;font-weight:bold">await</span> page.waitForSelector(<span style="color:#0ff;font-weight:bold">&#34;div#search&#34;</span>, { timeout: <span style="color:#fff;font-weight:bold">10000</span> });
+        <span style="color:#fff;font-weight:bold">await</span> page.waitForSelector(<span style="color:#0ff;font-weight:bold">&#39;a[href^=&#34;https://www.facebook.com&#34;&#39;</span>, { timeout: <span style="color:#fff;font-weight:bold">10000</span> });
+        <span style="color:#fff;font-weight:bold">const</span> results = [];
+        <span style="color:#fff;font-weight:bold">const</span> urls = <span style="color:#fff;font-weight:bold">await</span> page.evaluate((resultsObject) =&gt; {
+            <span style="color:#fff;font-weight:bold">const</span> urlResults = JSON.parse(resultsObject).results;
+            <span style="color:#fff;font-weight:bold">document</span>.getElementById(<span style="color:#0ff;font-weight:bold">&#34;search&#34;</span>).
+            querySelectorAll(<span style="color:#0ff;font-weight:bold">&#39;a[href^=&#34;https://www.facebook.com&#34;&#39;</span>).
+            forEach((a: <span style="color:#fff;font-weight:bold">HTMLAnchorElement</span>) =&gt; {
+                urlResults.push(a.href);
+            });
+            <span style="color:#fff;font-weight:bold">return</span> urlResults;
+        }, JSON.stringify({ results }));
+
+        <span style="color:#fff;font-weight:bold">if</span> (urls.length === <span style="color:#ff0;font-weight:bold">0</span>) {
+            <span style="color:#fff;font-weight:bold">return</span>;
+        }
+        <span style="color:#007f7f">// Take the first result
+</span><span style="color:#007f7f"></span>        <span style="color:#fff;font-weight:bold">await</span> page.<span style="color:#fff;font-weight:bold">goto</span>(urls[<span style="color:#ff0;font-weight:bold">0</span>], { waitUntil: <span style="color:#0ff;font-weight:bold">&#34;networkidle2&#34;</span> });
+        <span style="color:#fff;font-weight:bold">await</span> page.waitForSelector(<span style="color:#0ff;font-weight:bold">&#39;a[aria-label=&#34;Profile picture&#34;]&#39;</span>, { timeout: <span style="color:#fff;font-weight:bold">10000</span> });
+        <span style="color:#fff;font-weight:bold">const</span> imageUrl = <span style="color:#fff;font-weight:bold">await</span> page.evaluate(() =&gt; {
+            <span style="color:#fff;font-weight:bold">const</span> element = <span style="color:#fff;font-weight:bold">document</span>.querySelector(<span style="color:#0ff;font-weight:bold">&#39;a[aria-label=&#34;Profile picture&#34;]&#39;</span>).querySelector(<span style="color:#0ff;font-weight:bold">&#34;img&#34;</span>);
+            <span style="color:#fff;font-weight:bold">return</span> element.src;
+        });
+        console.log(<span style="color:#0ff;font-weight:bold">`The image url is </span><span style="color:#0ff;font-weight:bold">${</span>imageUrl<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">`</span>);
+        <span style="color:#fff;font-weight:bold">const</span> resp = <span style="color:#fff;font-weight:bold">await</span> fetch(imageUrl);
+        <span style="color:#fff;font-weight:bold">const</span> buffer = <span style="color:#fff;font-weight:bold">await</span> resp.buffer();
+        <span style="color:#fff;font-weight:bold">const</span> path = <span style="color:#0ff;font-weight:bold">`./</span><span style="color:#0ff;font-weight:bold">${</span>companyName<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">.png`</span>;
+        fs.createWriteStream(path).write(buffer);
+        <span style="color:#fff;font-weight:bold">await</span> page.close();
+        <span style="color:#fff;font-weight:bold">await</span> browserContext.close();
+        <span style="color:#fff;font-weight:bold">await</span> browser.close();
+} <span style="color:#fff;font-weight:bold">catch</span> (e) {
+        console.log(<span style="color:#0ff;font-weight:bold">`Error(s) occured for </span><span style="color:#0ff;font-weight:bold">${</span>companyName<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> : </span><span style="color:#0ff;font-weight:bold">${</span>e.toString()<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">`</span>);
+    }
+}
+</code></pre></div><p>In file <code>logodownloader.ts</code>, you can invoke this script as,</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#fff;font-weight:bold">import</span> <span style="color:#0ff;font-weight:bold">&#34;reflect-metadata&#34;</span>;
+<span style="color:#fff;font-weight:bold">import</span> { startLogoDownloader } <span style="color:#fff;font-weight:bold">from</span> <span style="color:#0ff;font-weight:bold">&#34;../common/logo_downloader&#34;</span>;
+
+(<span style="color:#fff;font-weight:bold">async</span> () =&gt; {
+    <span style="color:#fff;font-weight:bold">await</span> startLogoDownloader();
+})();
+</code></pre></div><h3 id="todo">TODO</h3>
+<ol>
+<li>You can generally store an image in an S3 bucket and store the path in the database or store it in DB as a blob. There are various pros and cons associated with each approach. Every few years this discussion comes up in DB mailing lists as <code>To blob or Not to blob</code> . You can google that expression. :)</li>
+</ol>
+<h3 id="key-take-aways-from-the-script">Key take aways from the script.</h3>
+<ol>
+<li>I have hard coded the company name - &ldquo;Google&rdquo; to demonstrate the example. You can pass an array of companies and run it.</li>
+<li>Currently, there is no mechanism in the code to retry failed companies.</li>
+<li>You can attach this to <code>npm run logo_download</code> by invoking the file <code>logodownloader.ts</code> in package.json.</li>
+</ol>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>All the content here is licensed under creative commons.</p>
+      
+      
+        ©
+        
+          2019 -
+        
+        2020
+         Srinivas Reddy Thatiparthy 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+        
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+        
+        <script src="https://srinivasreddy.dev/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

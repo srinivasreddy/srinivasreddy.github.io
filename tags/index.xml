@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Srini&#39;s blog</title>
+    <link>https://srinivasreddy.dev/tags/</link>
+    <description>Recent content in Tags on Srini&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 Nov 2020 17:07:56 +0530</lastBuildDate><atom:link href="https://srinivasreddy.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>idea</title>
+      <link>https://srinivasreddy.dev/tags/idea/</link>
+      <pubDate>Sat, 07 Nov 2020 17:07:56 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sass</title>
+      <link>https://srinivasreddy.dev/tags/sass/</link>
+      <pubDate>Sat, 07 Nov 2020 17:07:56 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/sass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>startups</title>
+      <link>https://srinivasreddy.dev/tags/startups/</link>
+      <pubDate>Sat, 07 Nov 2020 17:07:56 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/startups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>brilliant</title>
+      <link>https://srinivasreddy.dev/tags/brilliant/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/brilliant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://srinivasreddy.dev/tags/kubernetes/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://srinivasreddy.dev/tags/machine-learning/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>podcasts</title>
+      <link>https://srinivasreddy.dev/tags/podcasts/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/podcasts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cron</title>
+      <link>https://srinivasreddy.dev/tags/cron/</link>
+      <pubDate>Mon, 09 Dec 2019 11:46:07 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/cron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crontab</title>
+      <link>https://srinivasreddy.dev/tags/crontab/</link>
+      <pubDate>Mon, 09 Dec 2019 11:46:07 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/crontab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://srinivasreddy.dev/tags/python/</link>
+      <pubDate>Mon, 09 Dec 2019 11:46:07 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Srinivas Reddy Thatiparthy">
+    <meta name="description" content="In this post, we are going to examine how to setup python-crontab correctly and debugging for possible errors and how to resolve them.
+For the uninitiated, python-crontab is a python package for editing cron table aka crontab used for scheduling the jobs run by cron.
+I have setup a cron job which runs for an every hour. I have a file every_hour.py that contains the following code and sets up crontable entry to run cron.">
+    <meta name="keywords" content="Blogger, Developer, Wannabe enterprenuer">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Python crontab correctly"/>
+<meta name="twitter:description" content="In this post, we are going to examine how to setup python-crontab correctly and debugging for possible errors and how to resolve them.
+For the uninitiated, python-crontab is a python package for editing cron table aka crontab used for scheduling the jobs run by cron.
+I have setup a cron job which runs for an every hour. I have a file every_hour.py that contains the following code and sets up crontable entry to run cron."/>
+
+    <meta property="og:title" content="Using Python crontab correctly" />
+<meta property="og:description" content="In this post, we are going to examine how to setup python-crontab correctly and debugging for possible errors and how to resolve them.
+For the uninitiated, python-crontab is a python package for editing cron table aka crontab used for scheduling the jobs run by cron.
+I have setup a cron job which runs for an every hour. I have a file every_hour.py that contains the following code and sets up crontable entry to run cron." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://srinivasreddy.dev/posts/using-python-crontab-correctly/" />
+<meta property="article:published_time" content="2019-12-09T11:46:07+05:30" />
+<meta property="article:modified_time" content="2019-12-09T11:46:07+05:30" />
+
+
+    <title>
+  Using Python crontab correctly · Srini&#39;s blog
+</title>
+
+    
+      <link rel="canonical" href="https://srinivasreddy.dev/posts/using-python-crontab-correctly/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://srinivasreddy.dev/css/coder.min.f01c647a0d25b40da992a37c3376291185eed8a50ced8c26cc2c0bcfe38c97df.css" integrity="sha256-8Bxkeg0ltA2pkqN8M3YpEYXu2KUM7YwmzCwLz&#43;OMl98=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://srinivasreddy.dev/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://srinivasreddy.dev/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://srinivasreddy.dev/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://srinivasreddy.dev/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.78.1" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://srinivasreddy.dev/">
+      Srini&#39;s blog
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/contact/">Contact me</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/hireme/">Hire me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Using Python crontab correctly</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2019-12-09T11:46:07&#43;05:30'>
+                December 9, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <a href="https://srinivasreddy.dev/tags/python/">python</a>
+      <span class="separator">•</span>
+    <a href="https://srinivasreddy.dev/tags/cron/">cron</a>
+      <span class="separator">•</span>
+    <a href="https://srinivasreddy.dev/tags/crontab/">crontab</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>In this post, we are going to examine how to setup python-crontab correctly and debugging for possible errors and how to resolve them.</p>
+<p>For the uninitiated, <a href="https://gitlab.com/doctormo/python-crontab/">python-crontab</a> is a python package for editing cron table aka crontab used for scheduling the jobs run by cron.</p>
+<p>I have setup a cron job which runs for an every hour. I have a file <code>every_hour.py</code> that contains the following code and sets up crontable entry to run <code>cron.py</code> for every hour.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">from</span> crontab <span style="color:#fff;font-weight:bold">import</span> CronTab
+<span style="color:#fff;font-weight:bold">import</span> os
+<span style="color:#fff;font-weight:bold">import</span> sys
+
+<span style="color:#fff;font-weight:bold">if</span> __name__ == <span style="color:#0ff;font-weight:bold">&#34;__main__&#34;</span>:
+    cron = CronTab(user=os.getlogin())
+    cron.remove_all()
+    cwd = os.getcwd()
+    path = os.path.join(os.getcwd(), <span style="color:#0ff;font-weight:bold">&#39;cron.py&#39;</span>)
+    output_file = os.path.join(os.getcwd(), <span style="color:#0ff;font-weight:bold">&#39;crontab.output&#39;</span>)
+    os.chmod(path, <span style="color:#ff0;font-weight:bold">775</span>)
+    comment = <span style="color:#0ff;font-weight:bold">&#34;EveryHour&#34;</span>
+    job = cron.new(command=<span style="color:#0ff;font-weight:bold">&#39;cd {} &amp;&amp; {} {} &gt; {} 2&gt;&amp;1 &#39;</span>.format(cwd, sys.executable, path, output_file), comment=comment)
+    job.hour.every(<span style="color:#ff0;font-weight:bold">1</span>)
+    cron.write()
+</code></pre></div><p>The following are the key takeaways while developing the solution.</p>
+<ol>
+<li>
+<p>Instead of hard coding the user argument, I get the logged-in user with <code>os.getlogin()</code></p>
+</li>
+<li>
+<p>I am writing only a single entry into cron table, so I want to make this operation idempotent.
+hence <code>cron.remove_all()</code>.</p>
+</li>
+<li>
+<p>You can also use <code>crontab -l</code> to list the cron table entries and <code>crontab -r</code> to remove
+all entries, and while <code>crontab -e</code> to edit the table entries manually. I recommend these commands
+while diagnosing not to update a table entry. Because it is very easy to go wrong or introduce
+unnecessary line ending(s).</p>
+</li>
+<li>
+<p>I am assigning the executing permissions to <code>cron.py</code> with <code>os.chmod(path, 775)</code>.</p>
+</li>
+<li>
+<p>If you are in a virtual environment, your site-packages may not available to virtual environ python installation if you use <code>/usr/local/bin/python.</code> So it is always better to get the virtual env python
+executable with the <code>sys.executable</code>.</p>
+</li>
+<li>
+<p><code>cd cwd</code> is perfectly fine because I want <code>cron</code> to go into that directory before executing the command.</p>
+</li>
+<li>
+<p><code>2&gt;&amp;1</code> and <code>output_file</code> help us diagnosing the output/error logs while cron running.</p>
+</li>
+<li>
+<p>The command <code>job.every.hour(1)</code>  runs <code>cron.py</code> file every first minute of an hour.</p>
+</li>
+<li>
+<p>While it is unrealistic to wait for an hour to check for cron, so change <code>job.every.hour(1)</code> to <code>job.every.minute(1)</code> for debugging.</p>
+</li>
+<li>
+<p>And run <code>stat output_file</code> to see updated timestamps.</p>
+</li>
+</ol>
+<p>I hope this helps.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>All the content here is licensed under creative commons.</p>
+      
+      
+        ©
+        
+          2019 -
+        
+        2020
+         Srinivas Reddy Thatiparthy 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+        
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+        
+        <script src="https://srinivasreddy.dev/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

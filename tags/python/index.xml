@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Srini&#39;s blog</title>
+    <link>https://srinivasreddy.dev/tags/python/</link>
+    <description>Recent content in python on Srini&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Dec 2019 11:46:07 +0530</lastBuildDate><atom:link href="https://srinivasreddy.dev/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Python crontab correctly</title>
+      <link>https://srinivasreddy.dev/posts/using-python-crontab-correctly/</link>
+      <pubDate>Mon, 09 Dec 2019 11:46:07 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/posts/using-python-crontab-correctly/</guid>
+      <description>In this post, we are going to examine how to setup python-crontab correctly and debugging for possible errors and how to resolve them.
+For the uninitiated, python-crontab is a python package for editing cron table aka crontab used for scheduling the jobs run by cron.
+I have setup a cron job which runs for an every hour. I have a file every_hour.py that contains the following code and sets up crontable entry to run cron.</description>
+    </item>
+    
+  </channel>
+</rss>

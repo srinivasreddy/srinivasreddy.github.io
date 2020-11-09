@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Srini&#39;s blog</title>
+    <link>https://srinivasreddy.dev/posts/</link>
+    <description>Recent content in Posts on Srini&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 Nov 2020 17:07:56 +0530</lastBuildDate><atom:link href="https://srinivasreddy.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build companies logos as a service startup</title>
+      <link>https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/</link>
+      <pubDate>Sat, 07 Nov 2020 17:07:56 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/</guid>
+      <description>While working on a project, I have to write a program to crawl logo images of various companies. I have automated this with puppeteer script written in Typescript/Javascript. While this script has done the job for me - extracting 100 odd companies logos, I have to warn you that I haven&amp;rsquo;t tested more than that.
+You can install the required packages with the following commands,
+npm i puppeteer puppeteer-extra-plugin-stealth --save npm i reflect-metadata node-fetch fs puppeteer-extra --save Then,</description>
+    </item>
+    
+    <item>
+      <title>The best podcasts I listened</title>
+      <link>https://srinivasreddy.dev/posts/best-podcasts-i-listened/</link>
+      <pubDate>Fri, 13 Dec 2019 16:28:15 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/posts/best-podcasts-i-listened/</guid>
+      <description>This post is an archive of the podcasts I have liked for the sheer brilliance of the interviewee.
+This post will be updated as I listen more.
+Note: The order of appearance does not indicate any preference.
+  (Machine Learning Joins with Arun Kumar) [https://softwareengineeringdaily.com/2019/04/10/machine-learning-joins-with-arun-kumar/]
+  (Cruise: Self-Driving Engineering with Mo Elshenawy) [https://softwareengineeringdaily.com/2019/10/01/cruise-self-driving-engineering-with-mo-elshenawy/]
+  (Kubernetes Vision with Joe Beda) [https://softwareengineeringdaily.com/2019/06/11/kubernetes-vision-with-joe-beda/]
+  (Envoy, with Matt Klein) [https://kubernetespodcast.com/episode/033-envoy/]</description>
+    </item>
+    
+    <item>
+      <title>Using Python crontab correctly</title>
+      <link>https://srinivasreddy.dev/posts/using-python-crontab-correctly/</link>
+      <pubDate>Mon, 09 Dec 2019 11:46:07 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/posts/using-python-crontab-correctly/</guid>
+      <description>In this post, we are going to examine how to setup python-crontab correctly and debugging for possible errors and how to resolve them.
+For the uninitiated, python-crontab is a python package for editing cron table aka crontab used for scheduling the jobs run by cron.
+I have setup a cron job which runs for an every hour. I have a file every_hour.py that contains the following code and sets up crontable entry to run cron.</description>
+    </item>
+    
+  </channel>
+</rss>
