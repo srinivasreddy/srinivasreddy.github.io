@@ -3,21 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://srinivasreddy.dev/posts/comments-policy/</loc>
-    <lastmod>2020-11-10T10:32:22+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://srinivasreddy.dev/posts/</loc>
-    <lastmod>2020-11-10T10:32:22+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://srinivasreddy.dev/</loc>
-    <lastmod>2020-11-10T10:32:22+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/</loc>
     <lastmod>2020-11-07T17:07:56+05:30</lastmod>
   </url>
@@ -28,7 +13,17 @@
   </url>
   
   <url>
+    <loc>https://srinivasreddy.dev/posts/</loc>
+    <lastmod>2020-11-07T17:07:56+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://srinivasreddy.dev/tags/sass/</loc>
+    <lastmod>2020-11-07T17:07:56+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/</loc>
     <lastmod>2020-11-07T17:07:56+05:30</lastmod>
   </url>
   
