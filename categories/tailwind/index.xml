@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tailwind on Srini&#39;s blog</title>
+    <link>https://srinivasreddy.dev/categories/tailwind/</link>
+    <description>Recent content in tailwind on Srini&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Nov 2020 17:02:12 +0530</lastBuildDate><atom:link href="https://srinivasreddy.dev/categories/tailwind/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup tailwindcss 2.0.1 for your projects</title>
+      <link>https://srinivasreddy.dev/posts/tailwind-2.0.1/</link>
+      <pubDate>Mon, 30 Nov 2020 17:02:12 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/posts/tailwind-2.0.1/</guid>
+      <description>In this tutorial, I will explain the setup for tailwindcss 2.0.1. I found the official documentation is hard to follow and Adam&amp;rsquo;s YouTube video kind of outdated.
+First, create a directory with your project name, here I created a project named tailwind-helloworld.
+mkdir tailwind-helloworld Run the npm command - npm init -y to create a package.json with defaults.
+Install tailwindcss and deps with the command npm install tailwindcss postcss autoprefixer postcss-cli</description>
+    </item>
+    
+  </channel>
+</rss>

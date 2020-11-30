@@ -5,6 +5,43 @@
     <link>https://srinivasreddy.dev/categories/</link>
     <description>Recent content in Categories on Srini&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://srinivasreddy.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Nov 2020 17:02:12 +0530</lastBuildDate><atom:link href="https://srinivasreddy.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2.0.1</title>
+      <link>https://srinivasreddy.dev/categories/2.0.1/</link>
+      <pubDate>Mon, 30 Nov 2020 17:02:12 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/categories/2.0.1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://srinivasreddy.dev/categories/css/</link>
+      <pubDate>Mon, 30 Nov 2020 17:02:12 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/categories/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>helloworld</title>
+      <link>https://srinivasreddy.dev/categories/helloworld/</link>
+      <pubDate>Mon, 30 Nov 2020 17:02:12 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/categories/helloworld/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tailwind</title>
+      <link>https://srinivasreddy.dev/categories/tailwind/</link>
+      <pubDate>Mon, 30 Nov 2020 17:02:12 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/categories/tailwind/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

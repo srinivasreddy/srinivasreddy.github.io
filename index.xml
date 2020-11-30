@@ -6,7 +6,19 @@
     <description>Recent content on Srini&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Nov 2020 17:07:56 +0530</lastBuildDate><atom:link href="https://srinivasreddy.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Nov 2020 17:02:12 +0530</lastBuildDate><atom:link href="https://srinivasreddy.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup tailwindcss 2.0.1 for your projects</title>
+      <link>https://srinivasreddy.dev/posts/tailwind-2.0.1/</link>
+      <pubDate>Mon, 30 Nov 2020 17:02:12 +0530</pubDate>
+      
+      <guid>https://srinivasreddy.dev/posts/tailwind-2.0.1/</guid>
+      <description>In this tutorial, I will explain the setup for tailwindcss 2.0.1. I found the official documentation is hard to follow and Adam&amp;rsquo;s YouTube video kind of outdated.
+First, create a directory with your project name, here I created a project named tailwind-helloworld.
+mkdir tailwind-helloworld Run the npm command - npm init -y to create a package.json with defaults.
+Install tailwindcss and deps with the command npm install tailwindcss postcss autoprefixer postcss-cli</description>
+    </item>
+    
     <item>
       <title>Build companies logos as a service startup</title>
       <link>https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/</link>

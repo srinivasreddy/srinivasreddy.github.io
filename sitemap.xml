@@ -3,6 +3,56 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://srinivasreddy.dev/categories/2.0.1/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/categories/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/categories/css/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/categories/helloworld/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/posts/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/tags/programming/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/posts/tailwind-2.0.1/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/tags/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://srinivasreddy.dev/categories/tailwind/</loc>
+    <lastmod>2020-11-30T17:02:12+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://srinivasreddy.dev/posts/create-your-own-companies-logos-as-service-startup/</loc>
     <lastmod>2020-11-07T17:07:56+05:30</lastmod>
   </url>
@@ -13,27 +63,12 @@
   </url>
   
   <url>
-    <loc>https://srinivasreddy.dev/posts/</loc>
-    <lastmod>2020-11-07T17:07:56+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://srinivasreddy.dev/tags/sass/</loc>
     <lastmod>2020-11-07T17:07:56+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://srinivasreddy.dev/</loc>
-    <lastmod>2020-11-07T17:07:56+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://srinivasreddy.dev/tags/startups/</loc>
-    <lastmod>2020-11-07T17:07:56+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://srinivasreddy.dev/tags/</loc>
     <lastmod>2020-11-07T17:07:56+05:30</lastmod>
   </url>
   
@@ -84,10 +119,6 @@
   
   <url>
     <loc>https://srinivasreddy.dev/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://srinivasreddy.dev/categories/</loc>
   </url>
   
   <url>

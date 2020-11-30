@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Srinivas Reddy Thatiparthy">
+    <meta name="description" content="In this tutorial, I will explain the setup for tailwindcss 2.0.1. I found the official documentation is hard to follow and Adam&rsquo;s YouTube video kind of outdated.
+First, create a directory with your project name, here I created a project named tailwind-helloworld.
+mkdir tailwind-helloworld Run the npm command - npm init -y to create a package.json with defaults.
+Install tailwindcss and deps with the command npm install tailwindcss postcss autoprefixer postcss-cli">
+    <meta name="keywords" content="Blogger, Developer, Wannabe enterprenuer">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup tailwindcss 2.0.1 for your projects"/>
+<meta name="twitter:description" content="In this tutorial, I will explain the setup for tailwindcss 2.0.1. I found the official documentation is hard to follow and Adam&rsquo;s YouTube video kind of outdated.
+First, create a directory with your project name, here I created a project named tailwind-helloworld.
+mkdir tailwind-helloworld Run the npm command - npm init -y to create a package.json with defaults.
+Install tailwindcss and deps with the command npm install tailwindcss postcss autoprefixer postcss-cli"/>
+
+    <meta property="og:title" content="Setup tailwindcss 2.0.1 for your projects" />
+<meta property="og:description" content="In this tutorial, I will explain the setup for tailwindcss 2.0.1. I found the official documentation is hard to follow and Adam&rsquo;s YouTube video kind of outdated.
+First, create a directory with your project name, here I created a project named tailwind-helloworld.
+mkdir tailwind-helloworld Run the npm command - npm init -y to create a package.json with defaults.
+Install tailwindcss and deps with the command npm install tailwindcss postcss autoprefixer postcss-cli" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://srinivasreddy.dev/posts/tailwind-2.0.1/" />
+<meta property="article:published_time" content="2020-11-30T17:02:12+05:30" />
+<meta property="article:modified_time" content="2020-11-30T17:02:12+05:30" />
+
+
+    <title>
+  Setup tailwindcss 2.0.1 for your projects · Srini&#39;s blog
+</title>
+
+    
+      <link rel="canonical" href="https://srinivasreddy.dev/posts/tailwind-2.0.1/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://srinivasreddy.dev/css/coder.min.f01c647a0d25b40da992a37c3376291185eed8a50ced8c26cc2c0bcfe38c97df.css" integrity="sha256-8Bxkeg0ltA2pkqN8M3YpEYXu2KUM7YwmzCwLz&#43;OMl98=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://srinivasreddy.dev/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://srinivasreddy.dev/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://srinivasreddy.dev/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://srinivasreddy.dev/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.78.1" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://srinivasreddy.dev/">
+      Srini&#39;s blog
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/contact/">Contact me</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://srinivasreddy.dev/hireme/">Hire me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Setup tailwindcss 2.0.1 for your projects</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2020-11-30T17:02:12&#43;05:30'>
+                November 30, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="https://srinivasreddy.dev/categories/css/">css</a>
+      <span class="separator">•</span>
+    <a href="https://srinivasreddy.dev/categories/tailwind/">tailwind</a>
+      <span class="separator">•</span>
+    <a href="https://srinivasreddy.dev/categories/helloworld/">helloworld</a>
+      <span class="separator">•</span>
+    <a href="https://srinivasreddy.dev/categories/2.0.1/">2.0.1</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <a href="https://srinivasreddy.dev/tags/programming/">programming</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>In this tutorial, I will explain the setup for tailwindcss 2.0.1. I found the official documentation is hard to follow and Adam&rsquo;s YouTube <a href="https://www.youtube.com/watch?v=21HuwjmuS7A">video</a> kind of outdated.</p>
+<p>First, create a directory with your project name, here I created
+a project named tailwind-helloworld.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir tailwind-helloworld 
+</code></pre></div><p>Run the npm command - <code>npm init -y</code>  to create a package.json with defaults.</p>
+<p>Install tailwindcss and deps with the command
+<code>npm install tailwindcss postcss autoprefixer postcss-cli</code></p>
+<p>For your reference these are the installed versions,</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">+ autoprefixer@10.0.4
++ postcss@8.1.10
++ postcss-cli@8.3.0
++ tailwindcss@2.0.1
+</code></pre></div><p><code>touch postcss.config.js</code></p>
+<p>Include the following content in <code>postcss.config.js</code> file,</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">module.exports = {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    }
+}
+</code></pre></div><p><code>npx tailwindcss init</code> will initialize tailwindcss configuration.</p>
+<p>Create a css file called <code>prototype.css</code> in the <code>src/css</code> folder structure with the following content,</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code></pre></div><p>And Include the build command in package.json, and execute <code>npm run build</code>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#a31515">&#34;scripts&#34;</span><span style="">:</span> {
+	&#34;build&#34;: <span style="color:#a31515">&#34;postcss src/css/*.css -o dist/css/compiled.css&#34;</span>
+}
+</code></pre></div><p>I didn&rsquo;t dig into postcss details but it looks like newer versions expect a list of input folders, hence *.css, and it spits output into a single file.</p>
+<p>That&rsquo;s it!!!!
+You are good to reference build css file in your html code.</p>
+<p>You can find the example repository <a href="https://github.com/srinivasreddy/tailwind-helloworld">here</a></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "srinidev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>All the content here is licensed under creative commons.</p>
+      
+      
+        ©
+        
+          2019 -
+        
+        2020
+         Srinivas Reddy Thatiparthy 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+        
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+        
+        <script src="https://srinivasreddy.dev/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+      
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
